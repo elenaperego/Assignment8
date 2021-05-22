@@ -1,34 +1,14 @@
-public class Player {
+public interface Player {
 
-    private final String name;
-    private int points;
-    private String score;
+    public String getName();
 
-    public Player(String name, int points, String score){
-        this.name = name;
-        this.points = points;
-        this.score = score;
-    }
+    public int getPoints();
 
-    public String getName() {
-        return name;
-    }
+    public String getScore();
 
-    public int getPoints() {
-        return points;
-    }
+    public void setPoints(int points);
 
-    public String getScore() {
-        return score;
-    }
-
-    public void setPoints(int points) {
-        this.points = points;
-    }
-
-    public void setScore(String score) {
-        this.score = score;
-    }
+    public void setScore(String score);
 
 
 }
