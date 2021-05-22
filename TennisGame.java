@@ -8,8 +8,26 @@ public class TennisGame {
      *  CODE SMELLS:
      *
      *  1) long method
+     *      SOLUTION:
+     *      We used the Extract Method refactoring technique. Indeed, we divided the different types
+     *      of final score in different methods: All, Deuce, LoveScore, ScoreScore, Advantage and Win.
+     *      In this way, when we checked for the final score, we call sequentially all these methods.
      *  2) if statements
+     *      SOLUTION:
+     *      Thanks to the Extract Method refactoring technique, the if statements were already reduced.
+     *      However, we also noticed that many if statements were symmetrical. For example, when the final
+     *      score is "Advantage player1" or "Advantage player2", the conditions were identical but applied
+     *      to different objects. We resolved this issue by calling our extracted methods two times with the
+     *      parameters switched.
      *  3) duplicate code
+     *      SOLUTION:
+     *      Duplicate code was the main code smell that caused the two before-mentioned problems.
+     *      In particular, the assignment of the individual scores to the players based on their
+     *      points was repeated in most if statements. Thus, we created a getPoints method that,
+     *      based on the player, it finds the corresponding score. This method was called to
+     *      compute every possible final score and reduced significantly the size of each extracted
+     *      method.
+     *
      *
      */
 
